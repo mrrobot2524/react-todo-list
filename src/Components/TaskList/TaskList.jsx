@@ -14,7 +14,7 @@ const TaskList = ({tasks, remove, taskFilter, setTasks}) => {
       case 'all':
         return (<div className="container flex justify-center p-4 "><h1 className='min-w-md border-2 rounded-md text-red-300 text-lg border-red-300 shadow-lg p-4 text-center'>Список "ВСЕ" пуст</h1></div>)
       case 'active':
-        return `Список "АКТИВНЫЕ" пуст`
+        return (<div className="container flex justify-center p-4 "><h1 className='min-w-md border-2 rounded-md text-red-300 text-lg border-red-300 shadow-lg p-4 text-center'>Список "АКТИВНЫЕ" пуст</h1></div>)
       case 'completed':
         return (<div className="container flex justify-center p-4 "><h1 className='min-w-md border-2 rounded-md text-red-300 text-lg border-red-300 shadow-lg p-4 text-center'>Список "Выполненные" пуст</h1></div>)
     }
@@ -28,9 +28,9 @@ const TaskList = ({tasks, remove, taskFilter, setTasks}) => {
 
   const editTask = (tasks) => {
     const newTitle = prompt("Введите новый загаловок", tasks.title);
-    const newDesc = prompt("Введите новый загаловок", tasks.description);
+    const newDescription = prompt("Введите новый загаловок", tasks.description);
     if(newTitle !== null && newDesc !== null){
-      setTasks(prev => prev.map(t => t.id === tasks.id ? {...t, title: newTitle, description:newDesc} : t))
+      setTasks(prev => prev.map(t => t.id === tasks.id ? {...t, title: newTitle, description: newDescription} : t))
     }
   }
 

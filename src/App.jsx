@@ -1,17 +1,16 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './Components/Header/Header'
-import TaskList from './Components/TaskList/TaskList'
 import TaskAddBlock from './Components/TaskAddBlock/TaskAddBlock'
 import TaskFilter from './Components/TaskFliter/TaskFilter'
 
 function App() {
   const [tasks, setTasks] = useState([
-        {id:1, title: "JavaScript 1", desc: "This is the best programming language"},
-        {id:2, title: "JavaScript 2", desc: "This is the best programming language"},
-        {id:3, title: "JavaScript 3", desc: "This is the best programming language"},
-        {id:4, title: "JavaScript 3", desc: "This is the best programming language"},
-        {id:5, title: "JavaScript 3", desc: "This is the best programming language"},
+        {id:1, title: "JavaScript 1", description: "This is the best programming language"},
+        {id:2, title: "JavaScript 2", description: "This is the best programming language"},
+        {id:3, title: "JavaScript 3", description: "This is the best programming language"},
+        {id:4, title: "JavaScript 3", description: "This is the best programming language"},
+        {id:5, title: "JavaScript 3", description: "This is the best programming language"},
     ]);
 
     

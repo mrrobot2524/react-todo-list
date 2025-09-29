@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "../UI/button/Button";
 import SearchInput from "../UI/input/SearchInput";
 import TaskList from "../TaskList/TaskList";
-import TaskItem from "../TaskItem/TaskItem";
 
 const TaskFilter = ({tasks, setTasks}) => {
 
