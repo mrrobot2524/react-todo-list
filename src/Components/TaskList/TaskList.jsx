@@ -26,6 +26,13 @@ const TaskList = ({tasks, remove, taskFilter, setTasks}) => {
     );
   };
 
+  const editTask = (tasks) => {
+    const newTitle = prompt("Введите новый загаловок", tasks.title);
+    const newDesc = prompt("Введите новый загаловок", tasks.description);
+    if(newTitle !== null && newDesc !== null){
+      setTasks(prev => prev.map(t => t.id === tasks.id ? {...t, title: newTitle, description:newDesc} : t))
+    }
+  }
 
     return (
         <div className="w-full bg-white shadow-md rounded-lg p-6 border border-gray-200 mt-6">
@@ -35,7 +42,7 @@ const TaskList = ({tasks, remove, taskFilter, setTasks}) => {
           <ul className="space-y-3">
             {/* <!-- Item --> */}
            {filteredTasks.map((task, index) =>
-               <TaskItem remove={remove} number={index + 1} task={task} key={task.id} toggleComplete={toggleComplete}/>
+               <TaskItem remove={remove} number={index + 1} task={task} key={task.id} toggleComplete={toggleComplete} editTask={editTask}/>
            )}
           </ul>
         </div>
