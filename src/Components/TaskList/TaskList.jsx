@@ -8,7 +8,7 @@ const TaskList = ({tasks, remove, taskFilter, setTasks}) => {
     if(taskFilter === 'completed') return task.completed;
     return true
   })
-  // console.log(taskFilter)
+  console.log(!tasks.completed)
   if(filteredTasks.length === 0){
     switch(taskFilter){
       case 'all':
@@ -29,7 +29,7 @@ const TaskList = ({tasks, remove, taskFilter, setTasks}) => {
   const editTask = (tasks) => {
     const newTitle = prompt("Введите новый загаловок", tasks.title);
     const newDescription = prompt("Введите новый загаловок", tasks.description);
-    if(newTitle !== null && newDesc !== null){
+    if(newTitle !== null && newDescription !== null){
       setTasks(prev => prev.map(t => t.id === tasks.id ? {...t, title: newTitle, description: newDescription} : t))
     }
   }
